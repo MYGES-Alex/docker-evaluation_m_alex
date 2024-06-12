@@ -34,23 +34,23 @@
    `docker stop $(docker ps -a -q)`
 
 ### 10. Quelles précautions doit-on prendre pour construire une image afin de la garder de petite taille et faciliter sa reconstruction ?
-    Utiliser des images de base minimalistes, nettoyer les fichiers temporaires et les caches, utiliser des instructions `COPY` et `RUN` et éviter d'installer des packages inutiles.
+   Utiliser des images de base minimalistes, nettoyer les fichiers temporaires et les caches, utiliser des instructions `COPY` et `RUN` et éviter d'installer des packages inutiles.
 
 ### 11. Lorsqu’un conteneur s’arrête, tout ce qu’il a pu écrire sur le disque ou en mémoire est perdu. Vrai ou faux ? Pourquoi ?
-    Cela va dépendre si les données écrites sur le disque persistent, si elles ont été stockées dans un volume ou une bind mount par exemple. Sans ces derniers, les données sont perdues lorsque le conteneur s'arrête. Donc c'est faux.
+   Cela va dépendre si les données écrites sur le disque persistent, si elles ont été stockées dans un volume ou une bind mount par exemple. Sans ces derniers, les données sont perdues lorsque le conteneur s'arrête. Donc c'est faux.
 
 ### 12. Lorsqu’une image est créée, elle ne peut plus être modifiée. Vrai ou faux ?
-    Faux, de nouvelles couches peuvent être créé au-dessus de l'image existante, mais l'image originale reste immuable.
+   Faux, de nouvelles couches peuvent être créé au-dessus de l'image existante, mais l'image originale reste immuable.
 
 ### 13. Comment peut-on publier et obtenir facilement des images ?
-    On peut utiliser Docker Hub ou un registre privé.
+   On peut utiliser Docker Hub ou un registre privé.
 
 ### 14. Comment s’appelle l’image de plus petite taille possible ? Que contient-elle ?
-    L'image `scratch` qui ne contient rien par défaut.
+   L'image `scratch` qui ne contient rien par défaut.
 
 ### 15. Par quel moyen le client docker communique avec le serveur dockerd ? Est-il possible de communiquer avec le serveur via le protocole HTTP ? Pourquoi ?
-    Le client Docker communique avec le démon Docker (dockerd) via une API REST sur une socket UNIX ou TCP. 
+   Le client Docker communique avec le démon Docker (dockerd) via une API REST sur une socket UNIX ou TCP. 
     Oui, il est possible de communiquer via HTTP en configurant dockerd pour écouter sur une interface TCP.
 
 ### 16. Un conteneur doit lancer un processus par défaut que l’on pourra override à l’exécution. Quelle commande faut-il utiliser pour lancer ce processus : `CMD` ou `ENTRYPOINT` ?
-    Utiliser `ENTRYPOINT` pour définir le processus principal et `CMD` pour les arguments par défaut.
+   Utiliser `ENTRYPOINT` pour définir le processus principal et `CMD` pour les arguments par défaut.
