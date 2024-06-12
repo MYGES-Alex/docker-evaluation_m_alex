@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  client:
+    environment:
+      ENVIRONMENT: production
+    volumes:
+      - ./client:/var/www/html:ro  # En lecture seule pour la production
